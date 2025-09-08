@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-cs="Převodník měn ČNB" data-en="CNB Currency Converter">Převodník měn ČNB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo" data-cs="Převodník měn ČNB" data-en="CNB Currency Converter">Převodník měn ČNB</h1>
+            <div class="language-switch">
+                <button id="lang-cs" class="lang-btn active">CZ</button>
+                <button id="lang-en" class="lang-btn">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="converter-section">
+                <h2 data-cs="Kalkulačka kurzů České národní banky" data-en="Czech National Bank Currency Calculator">
+                    Kalkulačka kurzů České národní banky
+                </h2>
+                
+                <form id="conversion-form" class="converter-form">
+                    <div class="form-group">
+                        <label for="amount" data-cs="Částka" data-en="Amount">Částka</label>
+                        <input type="number" id="amount" name="amount" step="0.01" min="0" required 
+                               placeholder="100">
+                    </div>
+
+                    <div id="rate-info" class="rate-info hidden"></div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from-currency" data-cs="Z měny" data-en="From Currency">Z měny</label>
+                            <select id="from-currency" name="fromCurrency" required>
+                                <option value="" data-cs="Vyberte měnu" data-en="Select currency">Vyberte měnu</option>
+                            </select>
+                        </div>
+
+                        <div class="swap-btn-container">
+                            <button type="button" id="swap-currencies" class="swap-btn" aria-label="Swap currencies">
+                                ⇄
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="to-currency" data-cs="Do měny" data-en="To Currency">Do měny</label>
+                            <select id="to-currency" name="toCurrency" required>
+                                <option value="" data-cs="Vyberte měnu" data-en="Select currency">Vyberte měnu</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="convert-btn" data-cs="Převést" data-en="Convert">
+                        Převést
+                    </button>
+                </form>
+                
+                <div id="conversion-result" class="result-section hidden">
+                    <h3 data-cs="Výsledek převodu" data-en="Conversion Result">Výsledek převodu</h3>
+                    <div id="result-text" class="result-text"></div>
+                    <div id="rate-details" class="rate-details"></div>
+                </div>
+
+                <div id="error-message" class="error-message hidden"></div>
+                <div id="loading" class="loading hidden">
+                    <span data-cs="Načítám..." data-en="Loading...">Načítám...</span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-cs="Zdroj dat: Kurzy.cz" data-en="Data source: Kurzy.cz">
+                Zdroj dat: Kurzy.cz
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
