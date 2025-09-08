@@ -56,7 +56,7 @@ CurrencyConverterDemo/
 - **Update Frequency**: Daily (business days)
 
 ### N8N Webhook
-- **Endpoint**: `https://mike8nine.app.n8n.cloud/webhook/da05aab5-15e1-4964-96c1-9c56a641c40d`
+- **Endpoint**: `your n8n endpoint goes here`
 - **Method**: POST
 - **Request Format**:
 ```json
